@@ -9,15 +9,19 @@ interface SContent {
 
 const initialContent: SContent = {
   title: "What is Scrum?",
-  body: "Scrum is a way of planning and executing work. It is a framework that aims to make work more efficient and less stressfuld while producing better results.\n",
+  body: "Scrum is a way of planning and executing work. It is a framework that aims to make work more efficient and less stressfuld while producing better results.\nThe approach differs from more traditional frameworks like Six Sigma or CMMI in that it emphasizes quick initiation, iterations, and continuous improvement rather than the meticulous planning, linear progression, and extensive reporting and documentation required by these traditional methodologies",
 };
 const scrumContent: SContent[] = [
-  { title: "Monkey Forest", body: "The Monkey Forest stinks of monkeys" },
   {
-    title: "Nottingham Forest",
+    title: "The 3 Pilars of Scrum",
+    body: "The Monkey Forest stinks of monkeys",
+  },
+  { title: "The Srum team", body: "Forest Gump stinks indefinably" },
+  {
+    title: "The Scrum artifacts",
     body: "Nottingham Forest stinks of monkeys too",
   },
-  { title: "Forest Gump", body: "Forest Gump stinks indefinably" },
+  { title: "The five Scrum events", body: "Forest Gump stinks indefinably" },
 ];
 
 const ScrumPage: React.FC = () => {
