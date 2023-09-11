@@ -7,6 +7,10 @@ interface SContent {
   body: string;
 }
 
+const initialContent: SContent = {
+  title: "What is Scrum?",
+  body: "Scrum is a way of planning and executing work. It is a framework that aims to make work more efficient and less stressfuld while producing better results.\n",
+};
 const scrumContent: SContent[] = [
   { title: "Monkey Forest", body: "The Monkey Forest stinks of monkeys" },
   {
@@ -39,7 +43,17 @@ const ScrumPage: React.FC = () => {
             <p>{selectedTopic.body}</p>
           </div>
         ) : (
-          <p>Please select a topic from the menu</p>
+          <div>
+            <h2>{initialContent.title}</h2>
+            <p>
+              {initialContent.body.split("\n").map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
+            </p>
+          </div>
         )}
       </MainContent>
     </ScrumContainer>
