@@ -1,13 +1,12 @@
 const Theme = {
   colors: {
-    primary: "#d5f2dd",
-    primary_dark: "#bbf2ca",
-    secondary: "#d91190",
-    tertiary: "#f2e7b1",
-    background: "#facffa",
-    highlight: "#cba6de",
-    highlight_dark: "#bc81db",
-    branding: "#faaa6b",
+    primary: "#c2e4f2",
+    primary_dark: "#1da5f0",
+    secondary: "#ade6e4",
+    tertiary: "#C0E0E8",
+    background: "#E0F3F8",
+    highlight: "#9e9ae6",
+    branding: "#663399",
     text: "#333333",
   },
   fontSizes: {

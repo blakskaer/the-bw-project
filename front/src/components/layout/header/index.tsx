@@ -59,7 +59,7 @@ const Container = styled.header<ContainerProps>`
   z-index: 1;
   height: ${({ scrolled }) => (scrolled ? "10vh" : "100vh")};
   background: ${({ background, scrolled }) =>
-    scrolled ? Theme.colors.primary_dark : background || Theme.colors.primary};
+    scrolled ? Theme.colors.secondary : background || Theme.colors.primary};
   box-shadow: ${({ scrolled }) =>
     scrolled ? "0 2px 4px rgba(0, 0, 0, 0.2)" : "none"};
   transition: height 0.3s ease-in-out, background 0.3s ease-in-out,

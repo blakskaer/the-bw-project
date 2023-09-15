@@ -64,7 +64,7 @@ const StyledUl = styled.ul<UlProps>`
     border-radius: 1px;
     cursor: pointer;
     padding: 6px;
-    color: ${({ color }) => color || Theme.colors.secondary};
+    color: ${({ color }) => color || Theme.colors.branding};
     transition: border-top-color 0.143s ease 0s,
       border-right-color 0.143s ease 0.143s,
       border-bottom-color 0.143s ease 0.286s,
@@ -75,7 +75,7 @@ const StyledUl = styled.ul<UlProps>`
   }
 
   li:hover {
-    border-color: orange;
+    border-color: ${Theme.colors.branding};
   }
 `;
 

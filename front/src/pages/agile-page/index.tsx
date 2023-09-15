@@ -72,12 +72,12 @@ const MenuItem = styled.div`
   width: 100%;
   padding: 5% 10%;
   background-color: ${Theme.colors.highlight};
-  border-bottom: 1px solid ${Theme.colors.highlight_dark};
+  border-bottom: 1px solid ${Theme.colors.branding};
   cursor: pointer;
   color: ${Theme.colors.primary};
 
   &:hover {
-    background-color: ${Theme.colors.highlight_dark};
+    background-color: ${Theme.colors.branding};
   }
 `;
 
