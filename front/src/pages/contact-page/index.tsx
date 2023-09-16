@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Theme from "../../theme";
+import Theme from "../../common/styles/theme";
 import LILogo from "../../assets/logos/LI-In-Bug.png";
 import { Link } from "react-router-dom";
 import Pen from "../../assets/images/pen.jpg";

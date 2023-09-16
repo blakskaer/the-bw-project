@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import Navbar from "./navbar";
-import Theme from "../../../theme";
+import Theme from "../../../common/styles/theme";
 import { MenuItem } from "../../../common/hooks/useSelectableList";
 
 interface ContainerProps {

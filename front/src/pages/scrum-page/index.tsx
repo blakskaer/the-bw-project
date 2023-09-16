@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Theme from "../../theme";
+import Theme from "../../common/styles/theme";
 
 interface SContent {
   title: string;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Theme from "../../../../theme";
+import Theme from "../../../../common/styles/theme";
 import { menuItems } from "./menuItems";
 import {
   useSelectableList,
