@@ -10,7 +10,7 @@ interface SContent {
 const scrumContent: SContent[] = [
   {
     title: "What is Scrum?",
-    body: "Scrum is a way of planning and executing work that results in value.\nIt is a framework that aims to make work more efficient and less stressfuld while producing better results.\n\nThe approach differs from more traditional frameworks like Six Sigma or CMMI in that it emphasizes quick initiation, iterations, and continuous improvement rather than the meticulous planning, linear progression, and extensive reporting and documentation required by these traditional methodologies",
+    body: "Scrum is a way of planning and executing work that results in value.\nIt is a framework that aims to make work more efficient and less stressful while producing better results.\n\nThe approach differs from more traditional frameworks like Six Sigma or CMMI in that it emphasizes quick initiation, iterations, and continuous improvement rather than the meticulous planning, linear progression, and extensive reporting and documentation required by these traditional methodologies",
   },
   {
     title: "The 5 Scrum Values",
@@ -45,6 +45,7 @@ const ScrumPage: React.FC = () => {
             data-alias="menu-item"
             key={SCItem.title}
             onClick={() => setSelectedTopic(SCItem)}
+            isSelected={selectedTopic === SCItem}
           >
             {SCItem.title}
           </MenuItem>
@@ -99,11 +100,12 @@ const SidebarMenu = styled.ul`
   order: 2;
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled.div<{ isSelected: boolean }>`
   display: flex;
   width: 100%;
   padding: 5% 10%;
-  // background-color: ${Theme.colors.highlight};
+  background-color: ${(props) =>
+    props.isSelected ? Theme.colors.highlight : ""};
   border-bottom: 1px solid ${Theme.colors.branding};
   cursor: pointer;
   color: ${Theme.colors.primary};

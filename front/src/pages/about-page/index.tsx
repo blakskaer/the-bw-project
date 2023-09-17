@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Theme from "../../common/styles/theme";
 import WaterJumbo from "../../assets/images/water-jumbo.jpeg";
