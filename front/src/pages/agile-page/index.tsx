@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Theme from "../../common/styles/theme";
+import SidebarMenu from "../../components/SidebarMenu";
+import { PageContent } from "../../components/SidebarMenu";
 
-interface AContent {
-  title: string;
-  body: string;
-}
-
-const agileContent: AContent[] = [
+const agileContent: PageContent[] = [
   { title: "Summersby", body: "Summersby smells like agile" },
   {
     title: "Roskilde Festival",
@@ -20,21 +17,21 @@ const agileContent: AContent[] = [
 ];
 
 const AgilePage: React.FC = () => {
-  const [selectedTopic, setSelectedTopic] = useState<AContent | null>(null);
+  const [selectedTopic, setSelectedTopic] = useState<PageContent | null>(null);
 
   return (
     <AgileContainer data-alias="agile-container">
-      <SidebarMenu data-alias="sidebar-menu">
-        {agileContent.map((ACItem: AContent) => (
-          <MenuItem
-            data-alias="menu-item"
-            key={ACItem.title}
-            onClick={() => setSelectedTopic(ACItem)}
-          >
-            {ACItem.title}
-          </MenuItem>
-        ))}
-      </SidebarMenu>
+      <SidebarMenu
+        data-alias="sidebar-menu-agile-page"
+        selectedTopic={selectedTopic}
+        setSelectedTopic={setSelectedTopic}
+        menuItems={agileContent}
+        listBgColor={Theme.colors.highlight}
+        itemBgColor={Theme.colors.branding}
+        itemBgColorHover={Theme.colors.primary_dark}
+        itemBdrColor={Theme.colors.branding}
+        itemColor={Theme.colors.primary}
+      />
       <MainContent data-alias="main-content">
         {selectedTopic ? (
           <div>
@@ -54,31 +51,6 @@ const AgileContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${Theme.colors.background};
-`;
-
-const SidebarMenu = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 20%;
-  height: 100%;
-  background-color: ${Theme.colors.highlight};
-  padding-top: 5%;
-  order: 2;
-`;
-
-const MenuItem = styled.div`
-  display: flex;
-  width: 100%;
-  padding: 5% 10%;
-  background-color: ${Theme.colors.highlight};
-  border-bottom: 1px solid ${Theme.colors.branding};
-  cursor: pointer;
-  color: ${Theme.colors.primary};
-
-  &:hover {
-    background-color: ${Theme.colors.branding};
-  }
 `;
 
 const MainContent = styled.div`

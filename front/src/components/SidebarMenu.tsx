@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import Theme from "../../common/styles/theme";
+import Theme from "../common/styles/theme";
 
-interface Item {
+export interface PageContent {
   title: string;
+  body: string;
 }
 
 interface SidebarMenuProps {
-  selectedTopic: Item | null;
-  setSelectedTopic: (item: Item | null) => void;
-  menuItems: Item[];
+  selectedTopic: PageContent | null;
+  setSelectedTopic: (item: PageContent) => void;
+  menuItems: PageContent[];
   listBgColor: string;
   itemBgColor: string;
   itemBgColorHover: string;
@@ -29,7 +30,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
 }) => {
   return (
     <MenuList data-alias="sidebar-menu-list" bgColor={listBgColor}>
-      {menuItems.map((item: Item) => (
+      {menuItems.map((item: PageContent) => (
         <MenuItem
           data-alias="menu-item"
           key={item.title}
@@ -74,8 +75,7 @@ const MenuItem = styled.div<MenuItemProps>`
   display: flex;
   width: 100%;
   padding: 5% 10%;
-  background-color: ${(props) =>
-    props.isSelected ? props.bgColor || Theme.colors.highlight : ""};
+  background-color: ${(props) => (props.isSelected ? props.bgColor : "")};
   border-bottom: 1px solid ${(props) => props.bdrColor || Theme.colors.branding};
   cursor: pointer;
   color: ${(props) => props.color || Theme.colors.primary};

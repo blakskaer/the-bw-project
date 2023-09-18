@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Theme from "../../common/styles/theme";
+import SidebarMenu, { PageContent } from "../../components/SidebarMenu";
 
-interface SContent {
-  title: string;
-  body: string;
-}
-
-const scrumContent: SContent[] = [
+const scrumContent: PageContent[] = [
   {
     title: "What is Scrum?",
     body: "Scrum is a way of planning and executing work that results in value.\nIt is a framework that aims to make work more efficient and less stressful while producing better results.\n\nThe approach differs from more traditional frameworks like Six Sigma or CMMI in that it emphasizes quick initiation, iterations, and continuous improvement rather than the meticulous planning, linear progression, and extensive reporting and documentation required by these traditional methodologies",
@@ -35,22 +31,21 @@ const scrumContent: SContent[] = [
 ];
 
 const ScrumPage: React.FC = () => {
-  const [selectedTopic, setSelectedTopic] = useState<SContent | null>(null);
+  const [selectedTopic, setSelectedTopic] = useState<PageContent | null>(null);
 
   return (
     <ScrumContainer data-alias="scrum-container">
-      <SidebarMenu data-alias="sidebar-menu">
-        {scrumContent.map((SCItem: SContent) => (
-          <MenuItem
-            data-alias="menu-item"
-            key={SCItem.title}
-            onClick={() => setSelectedTopic(SCItem)}
-            isSelected={selectedTopic === SCItem}
-          >
-            {SCItem.title}
-          </MenuItem>
-        ))}
-      </SidebarMenu>
+      <SidebarMenu
+        data-alias="sidebar-menu-agile-page"
+        selectedTopic={selectedTopic}
+        setSelectedTopic={setSelectedTopic}
+        menuItems={scrumContent}
+        listBgColor={Theme.colors.primary_dark}
+        itemBgColor={Theme.colors.highlight}
+        itemBgColorHover={Theme.colors.branding}
+        itemBdrColor={Theme.colors.branding}
+        itemColor={Theme.colors.primary}
+      />
       <MainContent data-alias="main-content">
         {selectedTopic ? (
           <div>
@@ -87,32 +82,6 @@ const ScrumContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${Theme.colors.background};
-`;
-
-const SidebarMenu = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 20%;
-  height: 100%;
-  background-color: ${Theme.colors.primary_dark};
-  padding-top: 5%;
-  order: 2;
-`;
-
-const MenuItem = styled.div<{ isSelected: boolean }>`
-  display: flex;
-  width: 100%;
-  padding: 5% 10%;
-  background-color: ${(props) =>
-    props.isSelected ? Theme.colors.highlight : ""};
-  border-bottom: 1px solid ${Theme.colors.branding};
-  cursor: pointer;
-  color: ${Theme.colors.primary};
-
-  &:hover {
-    background-color: ${Theme.colors.branding};
-  }
 `;
 
 const Headline = styled.h2`
