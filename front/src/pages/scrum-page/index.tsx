@@ -22,7 +22,7 @@ const scrumContent: PageContent[] = [
   },
   {
     title: "The 5 Scrum Events",
-    body: "The five Scrum events provide structure to the Scrum framework, ensuring that the team works collaboratively, remains adaptable, and regularly inspects and adapts both the product and their processes. Together, they help teams deliver valuable and high-quality products iteratively and incrementally while continuously improving their work.\n\nSprint: A Sprint is a time-boxed period, typically 2-4 weeks in length, during which a Scrum Team works to complete a set of backlog items (user stories, features, tasks, etc.) that contribute to a potentially shippable product increment. The purpose of a Sprint is to provide focus, create a predictable cadence for delivery, and encourage the team to produce a working product increment within a short time frame.\n\nSprint Planning: This event marks the beginning of each Sprint. During Sprint Planning, the Product Owner and the Development Team collaborate to select backlog items to work on during the upcoming Sprint. The team defines the Sprint Goal and creates a plan for how they will achieve it. The purpose of Sprint Planning is to align the team on what needs to be done and how to do it.\n\nSprint Review: At the end of each Sprint, the Scrum Team holds a Sprint Review meeting. During this event, the Development Team demonstrates the work they have completed during the Sprint, and stakeholders provide feedback. The purpose of the Sprint Review is to inspect and adapt the product, gather feedback, and ensure alignment with stakeholder expectations.\n\nSprint Retrospective: Following the Sprint Review, the Scrum Team conducts a Sprint Retrospective. In this meeting, team members reflect on their processes and teamwork during the Sprint. They identify what went well, what could be improved, and develop action items for continuous improvement in the next Sprint. The purpose of the Sprint Retrospective is to foster a culture of continuous improvement and to make the team more effective and efficient over time.",
+    body: "The five Scrum events provide structure to the Scrum framework, ensuring that the team works collaboratively, remains adaptable, and regularly inspects and adapts both the product and their processes. Together, they help teams deliver valuable and high-quality products iteratively and incrementally while continuously improving their work.\n\nSprint: A Sprint is a time-boxed period, typically 2-4 weeks in length, during which a Scrum Team works to complete a set of backlog items (user stories, features, tasks, etc.) that contribute to a potentially shippable product increment. The purpose of a Sprint is to provide focus, create a predictable cadence for delivery, and encourage the team to produce a working product increment within a short time frame.\n\nSprint Planning: This event marks the beginning of each Sprint. During Sprint Planning, the Product Owner and the Development Team collaborate to select backlog items to work on during the upcoming Sprint. The team defines the Sprint Goal and creates a plan for how they will achieve it. The purpose of Sprint Planning is to align the team on what needs to be done and how to do it.\n\nDaily Scrum (Daily Standup): The Daily Scrum is a short, daily meeting (usually 15 minutes or less) held by the Development Team. Each team member shares what they worked on yesterday, what they plan to work on today, and any impediments or blockers they are facing. The purpose of the Daily Scrum is to promote transparency, keep the team synchronized, and identify and address issues early.\n\nSprint Review: At the end of each Sprint, the Scrum Team holds a Sprint Review meeting. During this event, the Development Team demonstrates the work they have completed during the Sprint, and stakeholders provide feedback. The purpose of the Sprint Review is to inspect and adapt the product, gather feedback, and ensure alignment with stakeholder expectations.\n\nSprint Retrospective: Following the Sprint Review, the Scrum Team conducts a Sprint Retrospective. In this meeting, team members reflect on their processes and teamwork during the Sprint. They identify what went well, what could be improved, and develop action items for continuous improvement in the next Sprint. The purpose of the Sprint Retrospective is to foster a culture of continuous improvement and to make the team more effective and efficient over time.",
   },
   {
     title: "The 3 Scrum Artifacts",
@@ -48,7 +48,7 @@ const ScrumPage: React.FC = () => {
       />
       <MainContent data-alias="main-content">
         {selectedTopic ? (
-          <div>
+          <>
             <Headline>{selectedTopic.title}</Headline>
             <p>
               {selectedTopic.body.split("\n").map((line, index) => (
@@ -58,9 +58,9 @@ const ScrumPage: React.FC = () => {
                 </React.Fragment>
               ))}
             </p>
-          </div>
+          </>
         ) : (
-          <div>
+          <>
             <Headline>{scrumContent[0].title}</Headline>
             <p>
               {scrumContent[0].body.split("\n").map((line, index) => (
@@ -70,7 +70,7 @@ const ScrumPage: React.FC = () => {
                 </React.Fragment>
               ))}
             </p>
-          </div>
+          </>
         )}
       </MainContent>
     </ScrumContainer>

@@ -3,21 +3,30 @@ import styled from "styled-components";
 import Theme from "../../common/styles/theme";
 import SidebarMenu from "../../components/SidebarMenu";
 import { PageContent } from "../../components/SidebarMenu";
-
-const agileContent: PageContent[] = [
-  { title: "Summersby", body: "Summersby smells like agile" },
-  {
-    title: "Roskilde Festival",
-    body: "Roskilde Festival smells like agile too",
-  },
-  {
-    title: "Le Petit Prince",
-    body: "Le Petit Prince se tres, tres petit, hein",
-  },
-];
+import blogContent from "./blogContent.json";
 
 const AgilePage: React.FC = () => {
   const [selectedTopic, setSelectedTopic] = useState<PageContent | null>(null);
+
+  // Function to parse and render subtitles
+  const renderSubtitles = (text: string) => {
+    // Split the text into sections based on "**Subtitle**" using a regular expression
+    const sections = text.split(/\*\*([^*]+)\*\*/);
+
+    return sections.map((section, index) => {
+      if (index % 2 === 0) {
+        // This is not a subtitle, render it as a paragraph
+        return <p key={index}>{section}</p>;
+      } else {
+        // This is a subtitle, render it in bold
+        return (
+          <Subtitle key={index}>
+            <strong>{section}</strong>
+          </Subtitle>
+        );
+      }
+    });
+  };
 
   return (
     <AgileContainer data-alias="agile-container">
@@ -25,7 +34,7 @@ const AgilePage: React.FC = () => {
         data-alias="sidebar-menu-agile-page"
         selectedTopic={selectedTopic}
         setSelectedTopic={setSelectedTopic}
-        menuItems={agileContent}
+        menuItems={blogContent}
         listBgColor={Theme.colors.highlight}
         itemBgColor={Theme.colors.branding}
         itemBgColorHover={Theme.colors.primary_dark}
@@ -35,11 +44,16 @@ const AgilePage: React.FC = () => {
       <MainContent data-alias="main-content">
         {selectedTopic ? (
           <div>
-            <h2>{selectedTopic.title}</h2>
-            <p>{selectedTopic.body}</p>
+            <Headline>{selectedTopic.title}</Headline>
+            {/* Use the renderSubtitles function to render subtitles */}
+            {renderSubtitles(selectedTopic.body)}
           </div>
         ) : (
-          <p>Please select a topic from the menu</p>
+          <div>
+            <Headline>{blogContent[0].title}</Headline>
+            {/* Use the renderSubtitles function to render subtitles */}
+            {renderSubtitles(blogContent[0].body)}
+          </div>
         )}
       </MainContent>
     </AgileContainer>
@@ -51,6 +65,15 @@ const AgileContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${Theme.colors.background};
+`;
+
+const Headline = styled.h2`
+  margin-bottom: 10px;
+`;
+
+const Subtitle = styled.h3`
+  font-weight: bold;
+  margin-top: 20px;
 `;
 
 const MainContent = styled.div`
