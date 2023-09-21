@@ -57,9 +57,9 @@ const MenuList = styled.ul<MenuListProps>`
   flex-direction: column;
   align-items: flex-start;
   width: 20%;
-  height: 100%;
+  height: 100vh;
   background-color: ${(props) => props.bgColor || Theme.colors.primary_dark};
-  padding-top: 5%;
+  padding-top: 15%;
   order: 2;
 `;
 

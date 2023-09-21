@@ -9,7 +9,7 @@ const AgilePage: React.FC = () => {
   const [selectedTopic, setSelectedTopic] = useState<PageContent | null>(null);
 
   // Function to parse and render subtitles
-  const renderSubtitles = (text: string) => {
+  const renderBodyText = (text: string) => {
     // Split the text into sections based on "**Subtitle**" using a regular expression
     const sections = text.split(/\*\*([^*]+)\*\*/);
 
@@ -45,14 +45,14 @@ const AgilePage: React.FC = () => {
         {selectedTopic ? (
           <div>
             <Headline>{selectedTopic.title}</Headline>
-            {/* Use the renderSubtitles function to render subtitles */}
-            {renderSubtitles(selectedTopic.body)}
+            {/* Use the renderBodyText function to render subtitles */}
+            {renderBodyText(selectedTopic.body)}
           </div>
         ) : (
           <div>
             <Headline>{blogContent[0].title}</Headline>
-            {/* Use the renderSubtitles function to render subtitles */}
-            {renderSubtitles(blogContent[0].body)}
+            {/* Use the renderBodyText function to render subtitles */}
+            {renderBodyText(blogContent[0].body)}
           </div>
         )}
       </MainContent>
@@ -71,9 +71,9 @@ const Headline = styled.h2`
   margin-bottom: 10px;
 `;
 
-const Subtitle = styled.h3`
-  font-weight: bold;
-  margin-top: 20px;
+const Subtitle = styled.p`
+  // margin-top: 20px;
+  margin: 20px 0 5px;
 `;
 
 const MainContent = styled.div`
