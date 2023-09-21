@@ -63,7 +63,7 @@ const AgilePage: React.FC = () => {
 const AgileContainer = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: ${Theme.colors.background};
 `;
 
@@ -72,7 +72,6 @@ const Headline = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  // margin-top: 20px;
   margin: 20px 0 5px;
 `;
 
@@ -82,7 +81,11 @@ const MainContent = styled.div`
   width: 80%;
   height: 100%;
   order: 1;
-  padding: 10%;
+  padding: 15% 10% 10% 10%;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export default AgilePage;

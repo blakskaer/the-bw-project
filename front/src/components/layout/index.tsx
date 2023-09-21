@@ -21,8 +21,8 @@ const LayoutContainer = styled.div`
 
 const Main = styled.main`
   height: 100vh;
-  padding-top: 10vh;
-  margin-bottom: 10vh;
 `;
+// padding-top: 10vh;
+// margin-bottom: 10vh;
 
 export default Layout;
