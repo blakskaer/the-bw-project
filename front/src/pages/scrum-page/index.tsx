@@ -95,6 +95,10 @@ const MainContent = styled.div`
   height: 100%;
   order: 1;
   padding: 10%;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export default ScrumPage;
