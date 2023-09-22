@@ -62,6 +62,8 @@ const AgilePage: React.FC = () => {
 
 const AgileContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
   background-color: ${Theme.colors.background};
@@ -81,7 +83,7 @@ const MainContent = styled.div`
   width: 80%;
   height: 100%;
   order: 1;
-  padding: 15% 10% 10% 10%;
+  padding: 10% 20%;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;

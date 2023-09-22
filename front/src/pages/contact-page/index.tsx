@@ -34,19 +34,20 @@ const ContactContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: ${Theme.colors.highlight};
 `;
 
 const LinkedinLink = styled.a`
   width: 5%;
   height: auto;
+  margin-top: 3%;
 `;
 
 const Heading = styled.h6<TextProps>`
   color: ${({ color }) => color || Theme.colors.primary};
   font-size: ${({ fontSize }) => fontSize || Theme.scaledText.twoHundred};
-  margin: 3% 0;
+  margin-top: 3%;
 `;
 
 export default ContactPage;

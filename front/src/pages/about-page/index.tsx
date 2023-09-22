@@ -6,7 +6,7 @@ import { aboutData } from "./aboutData";
 const AboutPage = () => {
   return (
     <AboutContainer data-alias="about-container">
-      <ContentContainer>
+      <ContentContainer data-alias="content-container">
         <TextContainer data-alias="text-container">
           <h1 data-alias="about-heading">{aboutData.aboutHeader}</h1>
           <p
@@ -22,20 +22,23 @@ const AboutPage = () => {
 
 const AboutContainer = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: ${Theme.colors.background};
-  padding: 10% 0;
 `;
 
 const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  align-items: center;
   width: 100%;
   height: 100%;
-  padding: 0 10% 30% 10%;
+  padding: 10% 20%;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -44,7 +47,7 @@ const ImageContainer = styled.div`
   align-items: center;
   background-image: url(${WaterJumbo});
   background-size: cover;
-  height: 80%;
+  height: 100%;
   margin-top: 10%;
   border-radius: 2%;
 `;

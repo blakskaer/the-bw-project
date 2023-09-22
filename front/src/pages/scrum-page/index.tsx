@@ -79,8 +79,10 @@ const ScrumPage: React.FC = () => {
 
 const ScrumContainer = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: ${Theme.colors.background};
 `;
 
@@ -94,7 +96,7 @@ const MainContent = styled.div`
   width: 80%;
   height: 100%;
   order: 1;
-  padding: 10%;
+  padding: 20% 20%;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
