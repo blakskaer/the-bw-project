@@ -11,6 +11,6 @@ export const aboutData: AboutData = {
   Helping companies establish practices that improve productivity and wellbeing at work.
   <br />
   <br />
-  <h2>Come along for the read!</h2>
+  <h3>Come along for the read!</h3>
   `,
 };

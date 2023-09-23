@@ -8,7 +8,9 @@ const AboutPage = () => {
     <AboutContainer data-alias="about-container">
       <ContentContainer data-alias="content-container">
         <TextContainer data-alias="text-container">
-          <h1 data-alias="about-heading">{aboutData.aboutHeader}</h1>
+          <Headline data-alias="about-heading">
+            {aboutData.aboutHeader}
+          </Headline>
           <p
             data-alias="about-text"
             dangerouslySetInnerHTML={{ __html: aboutData.aboutText }}
@@ -50,6 +52,10 @@ const ImageContainer = styled.div`
   height: 100%;
   margin-top: 10%;
   border-radius: 2%;
+`;
+
+const Headline = styled.h2`
+  margin-bottom: 10px;
 `;
 
 const TextContainer = styled.div`
