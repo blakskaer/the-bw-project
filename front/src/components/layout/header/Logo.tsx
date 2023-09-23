@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Theme from "../../../common/styles/theme";
-import { Link } from "react-router-dom";
 
 interface LogoProps {
   onLogoClick: () => void;

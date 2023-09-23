@@ -96,7 +96,7 @@ const MainContent = styled.div`
   width: 80%;
   height: 100%;
   order: 1;
-  padding: 20% 20%;
+  padding: 20%;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
