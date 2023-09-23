@@ -57,7 +57,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 5% 0 0;
+  padding: 0 20% 0 0;
 
   h1 {
     margin-bottom: 2%;
