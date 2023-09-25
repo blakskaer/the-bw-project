@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/the-bw-project/static/css/main.466398dd.css",
+    "main.js": "/the-bw-project/static/js/main.b40cd35a.js",
+    "static/js/787.023b63a1.chunk.js": "/the-bw-project/static/js/787.023b63a1.chunk.js",
+    "static/media/water-jumbo.jpeg": "/the-bw-project/static/media/water-jumbo.d1434194de0beee13d92.jpeg",
+    "index.html": "/the-bw-project/index.html",
+    "main.466398dd.css.map": "/the-bw-project/static/css/main.466398dd.css.map",
+    "main.b40cd35a.js.map": "/the-bw-project/static/js/main.b40cd35a.js.map",
+    "787.023b63a1.chunk.js.map": "/the-bw-project/static/js/787.023b63a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.466398dd.css",
+    "static/js/main.b40cd35a.js"
+  ]
+}
